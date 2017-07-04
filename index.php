@@ -1,9 +1,9 @@
 <?php
-$dbhost = getenv("OPENSHIFT_EXTMYSQL_DB_HOST");
-$dbport = getenv("OPENSHIFT_EXTMYSQL_DB_PORT");
-$dbuser = getenv("OPENSHIFT_EXTMYSQL_DB_USERNAME");
-$dbpwd = getenv("OPENSHIFT_EXTMYSQL_DB_PASSWORD");
-$dbname = getenv("OPENSHIFT_EXTMYSQL_DB_NAME");
+$dbhost = $OPENSHIFT_MYSQL_DB_HOST;
+$dbport = $OPENSHIFT_MYSQL_DB_PORT;
+$dbuser = "adminmtGQWWG";
+$dbpwd = "AAWHI28BByHP";
+$dbname = "php";
 $connection = mysql_connect($dbhost.":".$dbport, $dbuser, $dbpwd);
 if (!$connection) {
   echo "Could not connect to database";
