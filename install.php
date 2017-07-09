@@ -15,7 +15,7 @@ if (!$connection) {
   echo "Connected to database.<br>";
 }
 $dbconnection = mysql_select_db($dbname);
-
+/*
 $query = "CREATE TABLE `cad` (
 	`id` INT(11) NOT NULL AUTO_INCREMENT,
 	`idade` INT(11) NULL DEFAULT '0',
@@ -31,7 +31,7 @@ if (!$rs) {
     $message  = 'Invalid query: ' . mysql_error() . "\n";
     $message .= 'Whole query: ' . $query;
     echo($message);
-}
+}*/
 $query = "INSERT INTO `cad` (`id`, `idade`, `sexo`, `nome`, `bairro`, `doenca`, `mes`) VALUES (2, 62, 'M', 'Cintia', 'Centro', 'Doença 6', 'Jan');
 INSERT INTO `cad` (`id`, `idade`, `sexo`, `nome`, `bairro`, `doenca`, `mes`) VALUES (3, 22, 'M', 'Maria', 'Bairro 2', 'Doença 6', 'Jun');
 INSERT INTO `cad` (`id`, `idade`, `sexo`, `nome`, `bairro`, `doenca`, `mes`) VALUES (4, 27, 'M', 'Cintia', 'Bairro 2', 'Doença 3', 'Jun');
