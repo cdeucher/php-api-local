@@ -30,7 +30,7 @@ $rs = mysql_query($query);
 if (!$rs) {
     $message  = 'Invalid query: ' . mysql_error() . "\n";
     $message .= 'Whole query: ' . $query;
-    die($message);
+    echo($message);
 }
 $query = "INSERT INTO `cad` (`id`, `idade`, `sexo`, `nome`, `bairro`, `doenca`, `mes`) VALUES (2, 62, 'M', 'Cintia', 'Centro', 'Doença 6', 'Jan');
 INSERT INTO `cad` (`id`, `idade`, `sexo`, `nome`, `bairro`, `doenca`, `mes`) VALUES (3, 22, 'M', 'Maria', 'Bairro 2', 'Doença 6', 'Jun');
@@ -138,7 +138,7 @@ $rs = mysql_query($query);
 if (!$rs) {
     $message  = 'Invalid query: ' . mysql_error() . "\n";
     $message .= 'Whole query: ' . $query;
-    die($message);
+    echo($message);
 }
 mysql_close();
 ?>
