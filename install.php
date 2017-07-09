@@ -27,7 +27,11 @@ $query = "CREATE TABLE `cad` (
 	PRIMARY KEY (`id`)
 )ENGINE=InnoDB;";
 $rs = mysql_query($query);
-
+if (!$rs) {
+    $message  = 'Invalid query: ' . mysql_error() . "\n";
+    $message .= 'Whole query: ' . $query;
+    die($message);
+}
 $query = "INSERT INTO `cad` (`id`, `idade`, `sexo`, `nome`, `bairro`, `doenca`, `mes`) VALUES (2, 62, 'M', 'Cintia', 'Centro', 'Doença 6', 'Jan');
 INSERT INTO `cad` (`id`, `idade`, `sexo`, `nome`, `bairro`, `doenca`, `mes`) VALUES (3, 22, 'M', 'Maria', 'Bairro 2', 'Doença 6', 'Jun');
 INSERT INTO `cad` (`id`, `idade`, `sexo`, `nome`, `bairro`, `doenca`, `mes`) VALUES (4, 27, 'M', 'Cintia', 'Bairro 2', 'Doença 3', 'Jun');
@@ -131,5 +135,10 @@ INSERT INTO `cad` (`id`, `idade`, `sexo`, `nome`, `bairro`, `doenca`, `mes`) VAL
 INSERT INTO `cad` (`id`, `idade`, `sexo`, `nome`, `bairro`, `doenca`, `mes`) VALUES (102, 6, 'H', 'Marcos', 'Centro', 'Doença 5', 'Jul');";
 
 $rs = mysql_query($query);
+if (!$rs) {
+    $message  = 'Invalid query: ' . mysql_error() . "\n";
+    $message .= 'Whole query: ' . $query;
+    die($message);
+}
 mysql_close();
 ?>
