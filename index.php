@@ -16,15 +16,16 @@ if (!$connection) {
 }
 $dbconnection = mysql_select_db($dbname);
 
-$where =  '';
+$where =  ' where 1=1 ';
 
 if(!empty($_GET['param1']))
-  $where = " ".$_GET['param1']." like '%".$_GET['valor1']."%'";
+  $where .= " and ".$_GET['param1']." like '%".$_GET['valor1']."%'";
 if(!empty($_GET['param2']))
-  $where = " ".$_GET['param2']." like '%".$_GET['valor2']."%'";
+  $where .= " and ".$_GET['param2']." like '%".$_GET['valor2']."%'";
 
-$query = "SELECT * from cad ".($where == '') ? '' : ' where '.$where;
-//echo $query;
+//echo $where;die;
+$query = "SELECT * from cad ".$where;
+echo $query;die;
 $rs = mysql_query($query);
 
 $return = array();
@@ -33,6 +34,7 @@ while ($row = mysql_fetch_assoc($rs)) {
 }
 mysql_close();
 
+header('Access-Control-Allow-Origin: *');  
 echo  json_encode($return);
 die;
 ?>
