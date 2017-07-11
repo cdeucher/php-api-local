@@ -23,7 +23,8 @@ if(!empty($_GET['param1']))
 if(!empty($_GET['param2']))
   $where = " ".$_GET['param2']." like '%".$_GET['valor2']."%'";
 
-$query = "SELECT * from cad ".$where;
+$query = "SELECT * from cad ".($where == '') ? '' : ' where '.$where;
+//echo $query;
 $rs = mysql_query($query);
 
 $return = array();
