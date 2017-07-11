@@ -15,10 +15,18 @@ if (!$connection) {
   echo "Connected to database.<br>";
 }
 $dbconnection = mysql_select_db($dbname);
-$query = "SELECT * from cad";
+
+$where = (isset( $GET['where'])) ? $GET['where'] : '';
+
+$query = "SELECT * from cad $where";
 $rs = mysql_query($query);
+
+$return = array();
 while ($row = mysql_fetch_assoc($rs)) {
-  echo $row['id'] . "\n";
+   $return[] = $row;
 }
 mysql_close();
+
+json_encode($return);
+die;
 ?>
