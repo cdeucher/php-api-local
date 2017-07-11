@@ -16,9 +16,14 @@ if (!$connection) {
 }
 $dbconnection = mysql_select_db($dbname);
 
-$where = (isset( $GET['where'])) ? $GET['where'] : '';
+$where =  '';
 
-$query = "SELECT * from cad $where";
+if(!empty($_GET['param1']))
+  $where = " ".$_GET['param1']." like '%".$_GET['valor1']."%'";
+if(!empty($_GET['param2']))
+  $where = " ".$_GET['param2']." like '%".$_GET['valor2']."%'";
+
+$query = "SELECT * from cad ".$where;
 $rs = mysql_query($query);
 
 $return = array();
