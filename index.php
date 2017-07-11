@@ -25,7 +25,7 @@ if(!empty($_GET['param2']))
 
 //echo $where;die;
 $query = "SELECT * from cad ".$where;
-echo $query;die;
+//echo $query;die;
 $rs = mysql_query($query);
 
 $return = array();
