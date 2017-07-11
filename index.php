@@ -12,7 +12,7 @@ $connection = mysql_connect($dbhost.":".$dbport, $dbuser, $dbpwd);
 if (!$connection) {
   echo "Could not connect to database";
 } else {
-  echo "Connected to database.<br>";
+  //echo "Connected to database.<br>";
 }
 $dbconnection = mysql_select_db($dbname);
 
@@ -27,6 +27,6 @@ while ($row = mysql_fetch_assoc($rs)) {
 }
 mysql_close();
 
-json_encode($return);
+echo  json_encode($return);
 die;
 ?>
