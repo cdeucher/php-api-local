@@ -30,7 +30,7 @@ $rs = mysql_query($query);
 
 $return = array();
 while ($row = mysql_fetch_assoc($rs)) {
-   $return[] = $row;
+$return[] = array('id'=>$row['id'],'nome'=> utf8_decode($row['nome']),'sexo'=>$row['sexo'],'mes'=>$row['doenca'] );
 }
 mysql_close();
 
