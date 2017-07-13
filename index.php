@@ -61,7 +61,7 @@ $return[] = array(
 }
 mysql_close();
 
-header('Access-Control-Allow-Origin: *');
+//header('Access-Control-Allow-Origin: *');
 echo  json_encode($return);
 die;
 ?>
