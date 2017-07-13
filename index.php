@@ -1,8 +1,8 @@
 <?php
-$dbhost = (isset($OPENSHIFT_MYSQL_DB_HOST)) ? $OPENSHIFT_MYSQL_DB_HOST : '172.17.0.4';
-$dbport = (isset($OPENSHIFT_MYSQL_DB_PORT)) ? $OPENSHIFT_MYSQL_DB_PORT : 3306;
-$dbuser = (isset($OPENSHIFT_MYSQL_DB_HOST)) ? "adminmtGQWWG" : 'root';
-$dbpwd  = (isset($OPENSHIFT_MYSQL_DB_HOST)) ? "AAWHI28BByHP" : '123';
+$dbhost = $OPENSHIFT_MYSQL_DB_HOST;
+$dbport = $OPENSHIFT_MYSQL_DB_PORT;
+$dbuser = "adminmtGQWWG";
+$dbpwd  = "AAWHI28BByHP";
 
 $dbname = "php";
 $connection = mysql_connect($dbhost.":".$dbport, $dbuser, $dbpwd);
