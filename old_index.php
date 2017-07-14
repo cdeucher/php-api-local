@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 $dbhost = $OPENSHIFT_MYSQL_DB_HOST;
 $dbport = $OPENSHIFT_MYSQL_DB_PORT;
 $dbuser = "adminmtGQWWG";
