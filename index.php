@@ -17,9 +17,10 @@ $where =  ' where 1=1 ';
 
 if(!empty($_GET['param1']))
   $where .= " and ".$_GET['param1']." like '%".$_GET['valor1']."%'";
-if(!empty($_GET['param2']))
-  $where .= " and ".$_GET['param2']." like '%".$_GET['valor2']."%'";
-
+if(!empty($_GET['param2']) && !empty($_GET['valor2']))
+  $where .= " and ".$_GET['param2']." > '".$_GET['valor2']."'";
+if(!empty($_GET['param3']) && !empty($_GET['valor3']))
+  $where .= " and ".$_GET['param3']." < '".$_GET['valor3']."'";
 //echo $where;die;
 $query = "select c.doenca,count(1)as casos,YEAR(c.`data`) as ano
 ,COUNT(c.mes = 1 OR NULL) AS 'jan'
