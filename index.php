@@ -42,27 +42,31 @@ $rs = mysql_query($query);
 
 $return = array();
 while ($row = mysql_fetch_assoc($rs)) {
-$return[] = array(
-    'doenca'=> utf8_decode($row['doenca'])
-   ,'casos'=>  utf8_decode($row['casos'])
-   ,'ano'=>    utf8_decode($row['ano'])
-   ,'jan'=>    utf8_decode($row['jan'])
-   ,'fev'=>    utf8_decode($row['fev'])
-   ,'mar'=>    utf8_decode($row['mar'])
-   ,'abr'=>    utf8_decode($row['abr'])
-   ,'mai'=>    utf8_decode($row['mai'])
-   ,'jun'=>    utf8_decode($row['jun'])
-   ,'jul'=>    utf8_decode($row['jul'])
-   ,'ago'=>    utf8_decode($row['ago'])
-   ,'set'=>    utf8_decode($row['set'])
-   ,'out'=>    utf8_decode($row['out'])
-   ,'nov'=>    utf8_decode($row['nov'])
-   ,'dez'=>    utf8_decode($row['dez'])
-  );
-}
-mysql_close();
+  $return[] = array(
+      'doenca'=> utf8_encode($row['doenca'])
+     ,'casos'=>  utf8_encode($row['casos'])
+     ,'ano'=>    utf8_encode($row['ano'])
+     ,'jan'=>    utf8_encode($row['jan'])
+     ,'fev'=>    utf8_encode($row['fev'])
+     ,'mar'=>    utf8_encode($row['mar'])
+     ,'abr'=>    utf8_encode($row['abr'])
+     ,'mai'=>    utf8_encode($row['mai'])
+     ,'jun'=>    utf8_encode($row['jun'])
+     ,'jul'=>    utf8_encode($row['jul'])
+     ,'ago'=>    utf8_encode($row['ago'])
+     ,'set'=>    utf8_encode($row['set'])
+     ,'out'=>    utf8_encode($row['out'])
+     ,'nov'=>    utf8_encode($row['nov'])
+     ,'dez'=>    utf8_encode($row['dez'])
+    );
+  }
+  mysql_close();
+  
+  //echo "<pre>";
+  //print_r($return);die;
 
-//header('Access-Control-Allow-Origin: *');
-echo  json_encode($return);
+  //header('Access-Control-Allow-Origin: *');
+  echo  json_encode($return, JSON_UNESCAPED_UNICODE);
+
 die;
 ?>

@@ -1,238 +1,34 @@
--- --------------------------------------------------------
--- Servidor:                     www
--- Versão do servidor:           5.7.18 - MySQL Community Server (GPL)
--- OS do Servidor:               Linux
--- HeidiSQL Versão:              9.3.0.4984
--- --------------------------------------------------------
+﻿DROP TABLE `cad`;
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET NAMES utf8mb4 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-
--- Copiando estrutura do banco de dados para php
-CREATE DATABASE IF NOT EXISTS `php` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `php`;
-
-
--- Copiando estrutura para tabela php.cad
-DROP TABLE IF EXISTS `cad`;
-CREATE TABLE IF NOT EXISTS `cad` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `idade` int(11) DEFAULT '0',
-  `sexo` varchar(50) DEFAULT '0',
-  `nome` varchar(50) DEFAULT '0',
-  `bairro` varchar(50) DEFAULT '0',
-  `doenca` varchar(50) DEFAULT '0',
-  `mes` varchar(50) DEFAULT '0',
-  `data` datetime DEFAULT CURRENT_TIMESTAMP,
+CREATE TABLE `cad` (
+  `id` mediumint(8) unsigned NOT NULL auto_increment,
+  `idade` mediumint default NULL,
+  `sexo` varchar(255) default NULL,
+  `nome` varchar(255) default NULL,
+  `bairro` varchar(255) default NULL,
+  `doenca` varchar(255) default NULL,
+  `mes` mediumint default NULL,
+  `data` varchar(255),
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=201 DEFAULT CHARSET=utf8;
+) AUTO_INCREMENT=1;
 
--- Copiando dados para a tabela php.cad: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `cad` DISABLE KEYS */;
-INSERT INTO `cad` (`id`, `idade`, `sexo`, `nome`, `bairro`, `doenca`, `mes`, `data`) VALUES
-	(1, 72, 'M', 'Rylee', 'Vermont', 'Zika', '3', '2017-03-12 22:46:55'),
-	(2, 42, 'M', 'Kylee', 'MN', 'Sífilis', '3', '2017-03-05 05:22:28'),
-	(3, 76, 'F', 'Dante', 'Metropolitana de Santiago', 'Chikungunya', '5', '2017-05-28 02:55:38'),
-	(4, 79, 'F', 'Gage', 'NSW', 'Zika', '10', '2016-10-11 01:05:30'),
-	(5, 76, 'F', 'Ainsley', 'Ant', 'Zika', '11', '2017-11-15 14:01:46'),
-	(6, 51, 'F', 'McKenzie', 'Bihar', 'Chikungunya', '10', '2017-10-18 15:33:33'),
-	(7, 49, 'M', 'Lael', 'NI', 'Chikungunya', '2', '2017-02-19 09:05:04'),
-	(8, 25, 'F', 'Mikayla', 'AB', 'Zika', '7', '2017-07-24 06:02:31'),
-	(9, 16, 'F', 'Melinda', 'Berlin', 'Sífilis', '1', '2017-01-16 19:31:52'),
-	(10, 52, 'M', 'Jeremy', 'VIC', 'Dengue', '11', '2016-11-11 16:49:15'),
-	(11, 21, 'M', 'Kendall', 'AB', 'Zika', '10', '2017-10-26 18:49:32'),
-	(12, 70, 'M', 'Tamara', 'Alberta', 'Zika', '5', '2018-05-26 11:02:34'),
-	(13, 73, 'F', 'Britanni', 'BC', 'Sífilis', '6', '2017-06-24 16:59:06'),
-	(14, 39, 'F', 'Danielle', 'DS', 'Sífilis', '3', '2018-03-29 03:17:50'),
-	(15, 71, 'M', 'Erasmus', 'PK', 'Dengue', '6', '2017-06-15 18:29:40'),
-	(16, 46, 'M', 'Clio', 'RI', 'Dengue', '1', '2017-01-15 21:21:37'),
-	(17, 54, 'M', 'Mariam', 'Lagos', 'Zika', '7', '2016-07-30 19:14:09'),
-	(18, 69, 'F', 'Kaden', 'Comunitat Valenciana', 'Chikungunya', '11', '2016-11-27 10:36:18'),
-	(19, 43, 'F', 'Uma', 'Quebec', 'Chikungunya', '6', '2017-06-07 08:28:15'),
-	(20, 50, 'M', 'Philip', 'AB', 'Sífilis', '4', '2017-04-15 06:25:19'),
-	(21, 31, 'F', 'Halla', 'OV', 'Zika', '8', '2016-08-12 09:39:09'),
-	(22, 29, 'M', 'Idona', 'HR', 'Sífilis', '2', '2018-02-13 20:03:12'),
-	(23, 33, 'F', 'Althea', 'Noord Brabant', 'Chikungunya', '1', '2018-01-31 13:16:46'),
-	(24, 49, 'F', 'Brynne', 'IL', 'Chikungunya', '10', '2016-10-18 04:37:17'),
-	(25, 73, 'M', 'Ian', 'N.', 'Chikungunya', '5', '2018-05-20 23:30:28'),
-	(26, 68, 'M', 'Reagan', 'L', 'Zika', '4', '2017-04-27 06:20:18'),
-	(27, 63, 'M', 'Adara', 'New South Wales', 'Sífilis', '1', '2018-01-22 15:36:34'),
-	(28, 69, 'M', 'Graiden', 'Tripura', 'Dengue', '4', '2017-04-07 00:20:34'),
-	(29, 32, 'F', 'Sybil', 'AB', 'Sífilis', '2', '2017-02-11 22:42:44'),
-	(30, 43, 'F', 'Kelsie', 'NO', 'Chikungunya', '7', '2016-07-25 12:42:12'),
-	(31, 24, 'F', 'Lenore', 'SP', 'Dengue', '7', '2016-07-30 21:14:30'),
-	(32, 48, 'F', 'Stephen', 'KT', 'Chikungunya', '6', '2017-06-04 08:10:36'),
-	(33, 67, 'F', 'Anastasia', 'San José', 'Dengue', '5', '2018-05-06 04:19:53'),
-	(34, 73, 'M', 'Abdul', 'Leinster', 'Chikungunya', '4', '2018-04-06 17:49:18'),
-	(35, 51, 'F', 'Ursa', 'Hawaii', 'Sífilis', '12', '2016-12-30 02:20:30'),
-	(36, 49, 'M', 'April', 'Uttar Pradesh', 'Zika', '4', '2017-04-28 21:24:21'),
-	(37, 33, 'M', 'Tyrone', 'OP', 'Dengue', '2', '2018-02-07 10:55:15'),
-	(38, 66, 'M', 'Megan', 'MA', 'Zika', '6', '2017-06-14 22:57:37'),
-	(39, 41, 'M', 'Yael', 'Wie', 'Zika', '9', '2017-09-05 19:01:51'),
-	(40, 23, 'F', 'Kasper', 'NI', 'Dengue', '9', '2016-09-20 04:59:31'),
-	(41, 27, 'F', 'Abel', 'Paraíba', 'Zika', '3', '2017-03-20 19:57:21'),
-	(42, 24, 'F', 'Sierra', 'Chhattisgarh', 'Sífilis', '8', '2017-08-17 12:52:09'),
-	(43, 17, 'M', 'Yoko', 'BE', 'Dengue', '7', '2018-07-02 05:07:12'),
-	(44, 16, 'M', 'Hedley', 'Berlin', 'Zika', '8', '2016-08-25 10:04:41'),
-	(45, 20, 'F', 'Keefe', 'ON', 'Sífilis', '8', '2016-08-01 05:25:53'),
-	(46, 21, 'M', 'Hamish', 'CV', 'Chikungunya', '1', '2018-01-21 23:09:22'),
-	(47, 45, 'M', 'Pearl', 'NW', 'Dengue', '10', '2016-10-10 14:36:33'),
-	(48, 53, 'F', 'Dexter', 'San José', 'Zika', '11', '2017-11-04 05:50:09'),
-	(49, 76, 'F', 'Derek', 'Paraná', 'Chikungunya', '3', '2018-03-16 15:11:50'),
-	(50, 55, 'F', 'Mason', 'LIG', 'Zika', '1', '2018-01-22 10:51:28'),
-	(51, 73, 'M', 'Kitra', 'MP', 'Sífilis', '12', '2017-12-18 16:55:07'),
-	(52, 80, 'F', 'Kaden', 'NL', 'Dengue', '9', '2016-09-20 14:25:28'),
-	(53, 50, 'F', 'Allen', 'KT', 'Chikungunya', '7', '2017-07-02 02:19:57'),
-	(54, 65, 'F', 'Cora', 'New South Wales', 'Zika', '3', '2018-03-24 18:12:47'),
-	(55, 79, 'F', 'Dara', 'CAM', 'Zika', '1', '2018-01-10 05:26:20'),
-	(56, 56, 'F', 'Ora', 'Bursa', 'Zika', '9', '2016-09-14 14:38:46'),
-	(57, 66, 'F', 'Xanthus', 'CO', 'Dengue', '7', '2016-07-24 03:01:22'),
-	(58, 22, 'F', 'Vera', 'Maule', 'Dengue', '3', '2018-03-25 23:55:54'),
-	(59, 77, 'M', 'Dolan', 'Zeeland', 'Sífilis', '7', '2017-07-27 03:31:15'),
-	(60, 38, 'M', 'Price', 'Luxemburg', 'Chikungunya', '9', '2016-09-06 00:58:09'),
-	(61, 16, 'M', 'Hilel', 'PM', 'Sífilis', '12', '2016-12-27 21:19:50'),
-	(62, 80, 'M', 'Cheyenne', 'Northern Territory', 'Zika', '9', '2016-09-09 04:00:11'),
-	(63, 77, 'F', 'Dolan', 'NB', 'Dengue', '3', '2018-03-03 19:34:35'),
-	(64, 21, 'M', 'Rhoda', 'Tarapacá', 'Zika', '4', '2017-04-22 10:26:45'),
-	(65, 19, 'M', 'Catherine', 'Leinster', 'Sífilis', '8', '2016-08-07 17:54:51'),
-	(66, 26, 'F', 'Dexter', 'Dumfriesshire', 'Chikungunya', '5', '2017-05-03 04:48:56'),
-	(67, 42, 'M', 'Lane', 'AQ', 'Dengue', '1', '2018-01-12 21:37:44'),
-	(68, 41, 'F', 'Chandler', 'Sląskie', 'Dengue', '10', '2016-10-23 08:32:29'),
-	(69, 64, 'F', 'Timothy', 'Hat', 'Dengue', '7', '2017-07-02 18:58:38'),
-	(70, 39, 'F', 'Charissa', 'QC', 'Sífilis', '2', '2017-02-22 23:57:01'),
-	(71, 61, 'M', 'Kermit', 'AN', 'Dengue', '3', '2017-03-27 00:10:13'),
-	(72, 73, 'F', 'Hayes', 'East Lothian', 'Zika', '7', '2016-07-31 18:03:24'),
-	(73, 20, 'M', 'Dante', 'FL', 'Sífilis', '10', '2016-10-11 18:48:01'),
-	(74, 55, 'F', 'Brandon', 'Connacht', 'Dengue', '11', '2016-11-25 12:20:02'),
-	(75, 75, 'F', 'Alisa', 'RM', 'Chikungunya', '4', '2018-04-01 17:29:54'),
-	(76, 73, 'M', 'Tallulah', 'Östergötlands län', 'Chikungunya', '1', '2018-01-13 05:23:15'),
-	(77, 21, 'F', 'Macy', 'N.', 'Sífilis', '2', '2017-02-12 08:38:25'),
-	(78, 27, 'F', 'Cedric', 'North Island', 'Zika', '7', '2018-07-05 02:10:58'),
-	(79, 80, 'M', 'Mechelle', 'Namen', 'Zika', '5', '2017-05-25 01:16:47'),
-	(80, 46, 'M', 'Lev', 'BC', 'Chikungunya', '6', '2017-06-17 04:40:55'),
-	(81, 34, 'F', 'Joan', 'ON', 'Zika', '12', '2016-12-03 19:48:49'),
-	(82, 73, 'M', 'Ali', 'ON', 'Zika', '4', '2018-04-05 16:47:01'),
-	(83, 49, 'F', 'Amethyst', 'Leinster', 'Zika', '5', '2018-05-13 03:22:55'),
-	(84, 21, 'F', 'Kato', 'NI', 'Zika', '11', '2017-11-21 11:04:36'),
-	(85, 42, 'M', 'Daniel', 'SJ', 'Sífilis', '11', '2017-11-11 20:29:12'),
-	(86, 29, 'M', 'Quintessa', 'UMB', 'Chikungunya', '1', '2018-01-09 09:01:09'),
-	(87, 36, 'M', 'Daquan', 'North Island', 'Sífilis', '1', '2018-01-18 21:18:27'),
-	(88, 74, 'F', 'Peter', 'Wie', 'Chikungunya', '6', '2017-06-04 00:11:55'),
-	(89, 28, 'M', 'Iona', 'Stockholms län', 'Sífilis', '3', '2017-03-07 09:00:10'),
-	(90, 25, 'F', 'Cameron', 'South Australia', 'Sífilis', '3', '2017-03-08 12:06:42'),
-	(91, 44, 'M', 'Nomlanga', 'WA', 'Sífilis', '3', '2017-03-13 15:57:26'),
-	(92, 26, 'M', 'Inga', 'MB', 'Chikungunya', '6', '2017-06-21 00:50:25'),
-	(93, 73, 'F', 'Zia', 'Balıkesir', 'Sífilis', '2', '2018-02-12 07:28:00'),
-	(94, 55, 'F', 'Oren', 'Missouri', 'Zika', '12', '2016-12-09 08:38:40'),
-	(95, 62, 'F', 'Suki', 'Zuid Holland', 'Dengue', '12', '2016-12-16 21:54:58'),
-	(96, 34, 'M', 'Nerea', 'LIG', 'Dengue', '7', '2017-07-23 19:39:27'),
-	(97, 36, 'M', 'Penelope', 'O\'Higgins', 'Dengue', '6', '2017-06-12 00:16:45'),
-	(98, 80, 'M', 'Deborah', 'DE', 'Zika', '9', '2017-09-16 19:09:10'),
-	(99, 45, 'F', 'Ciaran', 'Connacht', 'Dengue', '7', '2018-07-01 01:39:12'),
-	(100, 29, 'F', 'Gray', 'Cambridgeshire', 'Dengue', '8', '2017-08-09 01:34:18'),
-	(101, 48, 'F', 'Wilma', 'Rivers', 'Zika', '1', '2017-01-14 11:22:08'),
-	(102, 35, 'M', 'Hadley', 'A', 'Sífilis', '10', '2016-10-04 06:59:41'),
-	(103, 28, 'M', 'Phyllis', 'Stockholms län', 'Chikungunya', '6', '2018-06-01 12:28:49'),
-	(104, 70, 'M', 'Jocelyn', 'South Australia', 'Sífilis', '10', '2016-10-24 00:12:45'),
-	(105, 63, 'M', 'Beatrice', 'South Island', 'Sífilis', '7', '2016-07-14 03:10:13'),
-	(106, 17, 'M', 'Hall', 'Ontario', 'Zika', '3', '2018-03-09 15:12:01'),
-	(107, 61, 'F', 'Jin', 'Andhra Pradesh', 'Zika', '11', '2017-11-04 15:52:03'),
-	(108, 60, 'M', 'Dane', 'Zuid Holland', 'Chikungunya', '9', '2017-09-13 19:43:31'),
-	(109, 24, 'M', 'Colleen', 'UP', 'Zika', '12', '2016-12-19 09:29:50'),
-	(110, 76, 'F', 'Erasmus', 'Tamil Nadu', 'Zika', '10', '2016-10-15 13:52:01'),
-	(111, 29, 'M', 'Doris', 'Saskatchewan', 'Zika', '4', '2018-04-22 05:40:41'),
-	(112, 38, 'M', 'Lucy', 'SE', 'Dengue', '5', '2017-05-21 12:39:28'),
-	(113, 62, 'M', 'Lisandra', 'N.', 'Chikungunya', '3', '2018-03-06 18:25:14'),
-	(114, 15, 'M', 'Kaden', 'ON', 'Chikungunya', '7', '2017-07-08 17:23:26'),
-	(115, 70, 'M', 'Fallon', 'RM', 'Zika', '5', '2017-05-26 18:19:41'),
-	(116, 44, 'M', 'Maisie', 'Stockholms län', 'Chikungunya', '3', '2017-03-18 09:33:30'),
-	(117, 42, 'F', 'Plato', 'Comunitat Valenciana', 'Dengue', '1', '2018-01-21 08:43:46'),
-	(118, 59, 'M', 'Flavia', 'PI', 'Chikungunya', '5', '2018-05-12 16:50:54'),
-	(119, 20, 'F', 'Indigo', 'Ank', 'Chikungunya', '6', '2018-06-13 18:04:16'),
-	(120, 48, 'M', 'Kelsey', 'Leinster', 'Zika', '7', '2018-07-03 14:36:39'),
-	(121, 40, 'F', 'Edward', 'VIC', 'Chikungunya', '8', '2017-08-11 05:04:09'),
-	(122, 79, 'F', 'Deborah', 'ON', 'Sífilis', '9', '2017-09-10 16:56:28'),
-	(123, 41, 'F', 'Yuli', 'Noord Brabant', 'Zika', '5', '2017-05-10 09:14:51'),
-	(124, 27, 'M', 'Phillip', 'Antwerpen', 'Chikungunya', '11', '2016-11-06 20:53:37'),
-	(125, 59, 'F', 'Carolyn', 'Manitoba', 'Sífilis', '10', '2016-10-30 05:47:25'),
-	(126, 44, 'M', 'Kenneth', 'Wie', 'Sífilis', '5', '2017-05-20 06:27:17'),
-	(127, 17, 'M', 'Quyn', 'SI', 'Zika', '1', '2017-01-19 23:39:46'),
-	(128, 31, 'F', 'Raven', 'Mer', 'Zika', '6', '2018-06-25 18:43:27'),
-	(129, 32, 'F', 'Thomas', 'Noord Brabant', 'Dengue', '12', '2017-12-22 23:07:49'),
-	(130, 30, 'F', 'Ella', 'Ontario', 'Dengue', '8', '2016-08-20 21:51:37'),
-	(131, 80, 'M', 'Judith', 'Lower Austria', 'Dengue', '5', '2018-05-08 17:26:16'),
-	(132, 15, 'F', 'Coby', 'Ontario', 'Zika', '3', '2018-03-25 17:47:07'),
-	(133, 18, 'F', 'Jada', 'Canarias', 'Dengue', '11', '2017-11-08 02:46:07'),
-	(134, 71, 'F', 'Marcia', 'BA', 'Zika', '11', '2016-11-03 21:57:34'),
-	(135, 37, 'M', 'David', 'AN', 'Dengue', '9', '2017-09-20 18:35:05'),
-	(136, 63, 'M', 'Ariel', 'JH', 'Chikungunya', '4', '2018-04-27 20:08:15'),
-	(137, 59, 'F', 'Amaya', 'QLD', 'Dengue', '4', '2018-04-27 05:41:24'),
-	(138, 47, 'M', 'Chastity', 'Hawaii', 'Dengue', '11', '2017-11-10 02:53:53'),
-	(139, 43, 'F', 'Deborah', 'Berlin', 'Sífilis', '2', '2017-02-19 15:41:15'),
-	(140, 55, 'M', 'Vladimir', 'PK', 'Chikungunya', '4', '2017-04-04 20:24:58'),
-	(141, 69, 'M', 'James', 'PO', 'Dengue', '5', '2018-05-06 04:39:35'),
-	(142, 56, 'F', 'Kadeem', 'AB', 'Dengue', '10', '2016-10-10 10:41:37'),
-	(143, 66, 'F', 'Stuart', 'Pomorskie', 'Sífilis', '2', '2017-02-24 11:18:19'),
-	(144, 78, 'F', 'Bertha', 'ON', 'Chikungunya', '9', '2016-09-09 10:55:41'),
-	(145, 17, 'M', 'Astra', 'Istanbul', 'Dengue', '2', '2018-02-22 12:41:15'),
-	(146, 23, 'F', 'Kyra', 'Västra Götalands län', 'Zika', '7', '2016-07-21 15:48:02'),
-	(147, 47, 'M', 'Tana', 'Ov', 'Sífilis', '2', '2017-02-23 13:32:33'),
-	(148, 31, 'M', 'Maile', 'Rio Grande do Sul', 'Chikungunya', '12', '2016-12-25 18:06:53'),
-	(149, 35, 'F', 'Britanney', 'SI', 'Dengue', '5', '2018-05-10 05:08:32'),
-	(150, 69, 'F', 'Britanni', 'Vlaams-Brabant', 'Dengue', '10', '2017-10-12 15:31:29'),
-	(151, 31, 'F', 'Olympia', 'San José', 'Dengue', '8', '2016-08-04 05:40:15'),
-	(152, 77, 'M', 'Zane', 'Dunbartonshire', 'Zika', '11', '2017-11-30 13:46:26'),
-	(153, 80, 'M', 'Kato', 'Z.', 'Zika', '2', '2017-02-06 21:41:56'),
-	(154, 46, 'M', 'Bruno', 'NSW', 'Zika', '10', '2016-10-04 17:40:52'),
-	(155, 51, 'F', 'Sage', 'VIC', 'Dengue', '5', '2018-05-02 12:56:13'),
-	(156, 52, 'M', 'Britanney', 'Atacama', 'Sífilis', '2', '2018-02-21 00:28:14'),
-	(157, 53, 'M', 'Britanni', 'Murcia', 'Zika', '10', '2017-10-07 21:23:46'),
-	(158, 51, 'F', 'Rhea', 'QLD', 'Chikungunya', '4', '2017-04-29 05:15:08'),
-	(159, 57, 'M', 'Veronica', 'SL', 'Zika', '12', '2016-12-23 20:31:27'),
-	(160, 68, 'F', 'Clinton', 'Minas Gerais', 'Dengue', '4', '2018-04-11 10:19:29'),
-	(161, 62, 'M', 'Amery', 'BA', 'Chikungunya', '6', '2017-06-27 12:55:02'),
-	(162, 49, 'F', 'Cooper', 'LU', 'Chikungunya', '7', '2018-07-12 23:22:26'),
-	(163, 70, 'F', 'Galvin', 'Nevada', 'Sífilis', '2', '2017-02-17 03:42:19'),
-	(164, 58, 'F', 'Abel', 'Wie', 'Dengue', '2', '2018-02-25 23:00:01'),
-	(165, 72, 'F', 'Noelani', 'Friuli-Venezia Giulia', 'Zika', '8', '2016-08-31 00:56:47'),
-	(166, 23, 'M', 'Cameron', 'North Island', 'Zika', '12', '2017-12-17 09:23:00'),
-	(167, 69, 'M', 'Imani', 'WA', 'Zika', '11', '2016-11-08 00:57:03'),
-	(168, 75, 'M', 'Malcolm', 'NI', 'Dengue', '6', '2017-06-28 09:43:58'),
-	(169, 79, 'M', 'Imelda', 'Alsace', 'Zika', '5', '2017-05-11 08:11:42'),
-	(170, 65, 'F', 'Maryam', 'Antalya', 'Dengue', '10', '2016-10-24 05:28:28'),
-	(171, 47, 'F', 'Lyle', 'Northamptonshire', 'Dengue', '9', '2017-09-15 20:34:40'),
-	(172, 74, 'M', 'Cullen', 'Bur', 'Dengue', '9', '2016-09-22 19:55:20'),
-	(173, 21, 'M', 'Axel', 'Alajuela', 'Sífilis', '5', '2017-05-09 09:49:19'),
-	(174, 52, 'F', 'Dacey', 'Wie', 'Zika', '6', '2018-06-03 18:07:08'),
-	(175, 61, 'M', 'Jamalia', 'OÖ.', 'Zika', '11', '2016-11-24 23:26:29'),
-	(176, 58, 'M', 'Rachel', 'New South Wales', 'Sífilis', '7', '2017-07-27 02:14:44'),
-	(177, 26, 'M', 'Galvin', 'AS', 'Sífilis', '11', '2016-11-21 02:52:21'),
-	(178, 60, 'F', 'Macey', 'SIC', 'Dengue', '10', '2016-10-17 11:08:39'),
-	(179, 78, 'F', 'Audra', 'Rio Grande do Sul', 'Zika', '2', '2018-02-15 20:11:00'),
-	(180, 32, 'F', 'Emerald', 'AN', 'Dengue', '10', '2017-10-04 23:24:52'),
-	(181, 23, 'F', 'Xerxes', 'CE', 'Zika', '11', '2017-11-21 08:18:34'),
-	(182, 70, 'M', 'Julian', 'MT', 'Dengue', '9', '2016-09-22 07:14:44'),
-	(183, 38, 'M', 'Ishmael', 'Ontario', 'Chikungunya', '9', '2017-09-30 19:08:30'),
-	(184, 50, 'F', 'Daryl', 'C', 'Chikungunya', '8', '2016-08-27 22:25:47'),
-	(185, 59, 'F', 'Nash', 'BC', 'Zika', '7', '2017-07-24 17:49:12'),
-	(186, 77, 'F', 'Oren', 'Kerala', 'Chikungunya', '4', '2018-04-16 16:38:54'),
-	(187, 79, 'F', 'Cole', 'TOS', 'Chikungunya', '8', '2016-08-10 01:42:04'),
-	(188, 26, 'M', 'Chiquita', 'Borno', 'Zika', '4', '2017-04-03 08:43:09'),
-	(189, 66, 'F', 'Clementine', 'British Columbia', 'Chikungunya', '1', '2017-01-24 23:53:28'),
-	(190, 54, 'F', 'Zena', 'U', 'Zika', '3', '2017-03-30 05:47:23'),
-	(191, 31, 'F', 'Benjamin', 'San José', 'Zika', '6', '2017-06-21 13:56:17'),
-	(192, 39, 'F', 'Pandora', 'OR', 'Sífilis', '3', '2018-03-31 13:32:58'),
-	(193, 40, 'F', 'Josephine', 'M', 'Chikungunya', '5', '2017-05-21 12:25:16'),
-	(194, 20, 'F', 'Brock', 'Massachusetts', 'Dengue', '12', '2017-12-08 03:14:25'),
-	(195, 33, 'F', 'Maxwell', 'New South Wales', 'Zika', '8', '2016-08-02 05:14:23'),
-	(196, 80, 'M', 'Liberty', 'VA', 'Sífilis', '2', '2018-02-23 11:50:25'),
-	(197, 79, 'M', 'Karly', 'Munster', 'Chikungunya', '12', '2017-12-02 23:52:37'),
-	(198, 70, 'F', 'Vivian', 'Castilla - La Mancha', 'Zika', '4', '2018-04-16 14:06:34'),
-	(199, 53, 'M', 'Vaughan', 'Pays de la Loire', 'Dengue', '2', '2017-02-22 07:24:55'),
-	(200, 53, 'M', 'Leah', 'Wie', 'Chikungunya', '11', '2016-11-06 22:05:11');
-/*!40000 ALTER TABLE `cad` ENABLE KEYS */;
-/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
-/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+INSERT INTO `cad` (`idade`,`sexo`,`nome`,`bairro`,`doenca`,`mes`,`data`) VALUES (74,"M","Orla","Presidente Médici","Dengue",1,"2017-10-26 12:41:46"),(63,"M","Nelle","Jardim Itália","Zika",6,"2017-11-15 17:06:54"),(59,"M","Kameko","Jardim Itália","Sífilis",7,"2017-04-29 09:54:09"),(68,"F","Chanda","Pinheirinho","Dengue",5,"2017-08-22 05:22:16"),(17,"M","Gay","Paraíso","Sífilis",8,"2017-02-26 12:53:17"),(23,"M","Jarrod","Líder","Dengue",12,"2017-01-19 13:42:21"),(15,"M","Isabelle","Esplanada","Dengue",4,"2017-06-21 19:04:01"),(37,"M","Lee","Palmital","Sífilis",8,"2017-09-20 00:48:56"),(46,"M","Serina","Fronteira Sul","Chikungunya",6,"2017-05-05 02:20:58"),(21,"F","Leah","São Cristóvão","Dengue",12,"2017-06-06 14:16:22");
+INSERT INTO `cad` (`idade`,`sexo`,`nome`,`bairro`,`doenca`,`mes`,`data`) VALUES (65,"M","Sonia","Jardins","Zika",3,"2017-04-01 21:00:13"),(69,"F","Jared","Passo dos Fortes","Sífilis",9,"2017-01-10 01:25:46"),(18,"M","Montana","Desbravador","Zika",9,"2017-05-29 13:20:49"),(65,"M","Russell","Palmital","Dengue",7,"2017-07-30 23:58:35"),(16,"M","Erin","Centro","Chikungunya",9,"2017-02-24 04:31:15"),(63,"F","Jessamine","Santos Dummond","Chikungunya",4,"2017-04-13 17:38:11"),(49,"M","Abdul","Pinheirinho","Chikungunya",10,"2017-04-18 04:52:43"),(34,"F","Uriel","Lajeado","Chikungunya",4,"2017-10-03 11:55:15"),(66,"M","Velma","Autódromo","Chikungunya",3,"2017-01-17 23:52:31"),(37,"F","Mollie","Alvorada","Chikungunya",10,"2017-02-07 02:49:07");
+INSERT INTO `cad` (`idade`,`sexo`,`nome`,`bairro`,`doenca`,`mes`,`data`) VALUES (63,"M","Carolyn","Quedas do Palmital","Sífilis",3,"2017-09-05 04:21:24"),(37,"M","Giacomo","Progresso","Zika",9,"2017-01-21 21:14:30"),(23,"M","Axel","Esplanada","Chikungunya",11,"2017-01-23 13:48:33"),(65,"F","Cullen","São Pedro","Dengue",4,"2017-07-13 02:56:04"),(79,"M","Dacey","Autódromo","Sífilis",12,"2017-07-19 18:42:25"),(30,"F","Dakota","Efapi","Zika",10,"2017-08-31 15:28:58"),(65,"M","Reagan","Universitário","Dengue",9,"2017-10-11 06:26:20"),(38,"F","Kameko","Belvedere","Sífilis",1,"2017-06-21 23:18:54"),(68,"M","Jeremy","Centro","Zika",3,"2017-08-19 00:31:35"),(70,"M","Brady","Boa Vista","Zika",3,"2017-09-19 05:17:38");
+INSERT INTO `cad` (`idade`,`sexo`,`nome`,`bairro`,`doenca`,`mes`,`data`) VALUES (73,"M","Colette","Trevo","Dengue",3,"2017-05-12 03:06:15"),(77,"M","Lee","Cristo Rei","Zika",5,"2017-01-03 10:54:35"),(58,"M","Heidi","Santos Dummond","Zika",9,"2017-12-07 17:38:57"),(26,"M","Palmer","Universitário","Dengue",8,"2017-05-04 14:50:12"),(47,"M","Lila","Eldorado","Chikungunya",12,"2017-10-27 17:45:15"),(34,"F","Driscoll","Dom Gerônimo","Dengue",11,"2017-08-11 23:34:35"),(29,"F","Len","Presidente Médici","Sífilis",8,"2017-01-14 07:23:58"),(80,"F","Cooper","Passo dos Fortes","Dengue",6,"2017-03-30 23:40:59"),(52,"M","Linda","Engenho Braun","Dengue",3,"2017-02-13 06:41:33"),(64,"M","Naida","Bom Pastor","Zika",8,"2017-02-24 00:22:17");
+INSERT INTO `cad` (`idade`,`sexo`,`nome`,`bairro`,`doenca`,`mes`,`data`) VALUES (53,"M","Chaim","Centro","Chikungunya",11,"2017-10-28 10:29:08"),(75,"M","Piper","Palmital","Zika",1,"2017-11-05 12:22:07"),(25,"F","Zia","Paraíso","Dengue",6,"2017-03-13 12:39:00"),(53,"M","Quemby","Araras","Zika",5,"2017-07-02 21:33:41"),(79,"M","Philip","Vila Real","Dengue",9,"2017-02-26 23:51:21"),(42,"M","Craig","Alvorada","Zika",8,"2017-05-10 00:40:01"),(54,"M","Tobias","Bela Vista","Sífilis",8,"2017-05-12 11:10:18"),(24,"F","Tate","Jardim Europa","Chikungunya",9,"2017-06-05 05:45:40"),(40,"M","Melodie","Desbravador","Dengue",7,"2017-07-12 09:17:14"),(23,"M","Jade","SAIC","Zika",1,"2017-01-02 16:42:54");
+INSERT INTO `cad` (`idade`,`sexo`,`nome`,`bairro`,`doenca`,`mes`,`data`) VALUES (48,"F","Gay","Bom Retiro","Sífilis",11,"2017-01-18 09:51:55"),(18,"M","Harrison","Santa Paulina","Zika",12,"2017-11-24 06:00:11"),(57,"M","Branden","Bela Vista","Zika",11,"2017-03-20 07:43:47"),(21,"M","Reagan","Fronteira Sul","Zika",8,"2017-10-20 07:22:05"),(40,"M","Ashton","Passo dos Fortes","Chikungunya",3,"2017-10-21 20:27:08"),(76,"F","Rogan","Santos Dummond","Zika",6,"2017-04-27 12:31:56"),(33,"F","Darryl","Dom Gerônimo","Chikungunya",7,"2017-07-02 20:28:25"),(43,"F","Violet","Bela Vista","Dengue",5,"2017-03-26 10:25:01"),(44,"M","Yardley","Cristo Rei","Dengue",5,"2017-03-30 11:20:52"),(17,"F","Stuart","Santo Antônio","Dengue",10,"2017-10-09 03:28:32");
+INSERT INTO `cad` (`idade`,`sexo`,`nome`,`bairro`,`doenca`,`mes`,`data`) VALUES (41,"M","Mariam","Monte Belo","Chikungunya",8,"2017-10-24 03:40:58"),(47,"F","Olympia","Santos Dummond","Zika",9,"2017-10-14 03:57:17"),(68,"F","Palmer","Fronteira Sul","Zika",8,"2017-12-01 13:38:37"),(36,"M","Ann","Presidente Médici","Sífilis",7,"2017-06-14 22:55:22"),(76,"F","Mariam","Dom Gerônimo","Chikungunya",12,"2017-12-18 09:23:42"),(61,"M","Tatyana","Monte Belo","Sífilis",11,"2017-09-14 10:24:48"),(63,"M","Bertha","Quedas do Palmital","Chikungunya",11,"2017-12-04 12:33:41"),(40,"M","Dalton","Jardim Itália","Dengue",2,"2017-07-11 11:58:19"),(34,"M","Roanna","Quedas do Palmital","Chikungunya",9,"2017-09-13 05:04:38"),(19,"M","Tashya","Lajeado","Chikungunya",9,"2017-02-21 05:58:29");
+INSERT INTO `cad` (`idade`,`sexo`,`nome`,`bairro`,`doenca`,`mes`,`data`) VALUES (61,"F","Garth","Bom Retiro","Zika",2,"2017-04-21 11:57:14"),(31,"M","Hamilton","Santa Maria","Chikungunya",2,"2017-06-19 08:14:16"),(55,"F","Idola","Bom Retiro","Zika",7,"2017-09-01 03:22:00"),(16,"M","Hollee","Autódromo","Sífilis",10,"2017-05-02 23:56:19"),(17,"M","Alisa","São Cristóvão","Chikungunya",7,"2017-07-09 01:00:35"),(39,"M","Angela","Santo Antônio","Dengue",9,"2017-02-21 17:10:24"),(66,"F","Addison","Universitário","Chikungunya",9,"2017-02-19 03:45:10"),(43,"M","Louis","SAIC","Dengue",2,"2017-01-07 03:28:22"),(42,"M","Cathleen","Trevo","Sífilis",12,"2017-08-06 16:10:41"),(74,"M","Gil","São Cristóvão","Dengue",7,"2017-02-16 07:46:54");
+INSERT INTO `cad` (`idade`,`sexo`,`nome`,`bairro`,`doenca`,`mes`,`data`) VALUES (26,"M","Tobias","Santo Antônio","Sífilis",6,"2017-07-01 07:36:10"),(67,"M","Emerson","Jardins","Sífilis",8,"2017-07-20 01:33:02"),(21,"M","Galvin","Santo Antônio","Chikungunya",5,"2017-08-27 09:35:37"),(73,"M","Olivia","Seminário","Dengue",9,"2017-10-15 20:09:13"),(38,"M","Ross","Palmital","Chikungunya",12,"2017-10-06 00:45:28"),(36,"F","Garrett","Bom Retiro","Chikungunya",8,"2017-10-14 15:11:41"),(69,"F","Halla","Belvedere","Sífilis",5,"2017-12-12 01:31:03"),(40,"F","Pascale","Eldorado","Zika",5,"2017-01-30 13:19:58"),(30,"F","Lars","Autódromo","Chikungunya",10,"2017-02-03 17:51:41"),(60,"F","Adria","SAIC","Zika",2,"2017-01-12 20:05:08");
+INSERT INTO `cad` (`idade`,`sexo`,`nome`,`bairro`,`doenca`,`mes`,`data`) VALUES (71,"F","Victor","SAIC","Zika",8,"2017-04-05 23:20:55"),(77,"M","Quinn","Quedas do Palmital","Sífilis",9,"2017-10-28 02:08:19"),(60,"M","Jessamine","Lajeado","Sífilis",5,"2017-03-01 02:48:45"),(18,"F","Leslie","Engenho Braun","Sífilis",1,"2017-11-30 15:34:44"),(31,"F","Leroy","Seminário","Sífilis",9,"2017-05-19 03:17:38"),(31,"M","Pamela","Presidente Médici","Zika",11,"2017-10-21 22:30:16"),(62,"F","Adele","Cristo Rei","Sífilis",1,"2017-08-11 18:20:55"),(39,"F","Olivia","Santa Paulina","Zika",11,"2017-02-03 01:38:49"),(49,"M","Aidan","Alvorada","Zika",6,"2017-10-02 14:47:06"),(57,"F","Ruth","Parque das Palmeiras","Zika",4,"2017-03-22 17:44:12");
+INSERT INTO `cad` (`idade`,`sexo`,`nome`,`bairro`,`doenca`,`mes`,`data`) VALUES (66,"F","Kellie","Jardins","Sífilis",2,"2017-11-21 16:47:19"),(22,"F","Kelsie","Boa Vista","Zika",3,"2017-01-05 09:33:49"),(20,"F","Francis","Cristo Rei","Zika",3,"2017-02-04 02:14:32"),(75,"F","Julie","Maria Goretti","Dengue",5,"2017-01-25 16:02:24"),(27,"F","Jade","Jardins","Sífilis",3,"2017-04-17 17:55:32"),(50,"F","Clayton","Centro","Sífilis",3,"2017-12-25 01:52:13"),(56,"M","Yardley","Engenho Braun","Dengue",5,"2017-04-10 23:24:16"),(35,"M","Karen","São Cristóvão","Zika",7,"2017-02-08 15:32:24"),(19,"F","Todd","Pinheirinho","Chikungunya",3,"2017-05-04 10:36:47"),(80,"F","Harrison","SAIC","Sífilis",12,"2017-11-28 08:41:39");
+INSERT INTO `cad` (`idade`,`sexo`,`nome`,`bairro`,`doenca`,`mes`,`data`) VALUES (31,"M","Jordan","Progresso","Dengue",9,"2017-11-17 23:24:20"),(36,"M","Ryan","Cristo Rei","Zika",11,"2017-11-17 10:11:49"),(23,"M","Beatrice","Santa Maria","Chikungunya",7,"2017-12-23 08:01:10"),(36,"M","Charity","Bom Pastor","Dengue",5,"2017-07-21 05:12:13"),(54,"M","Ferris","Cristo Rei","Chikungunya",6,"2017-07-21 07:55:13"),(24,"F","Wing","Maria Goretti","Chikungunya",11,"2017-03-06 08:22:43"),(75,"M","Cruz","Belvedere","Chikungunya",3,"2017-01-12 16:29:28"),(73,"F","Ora","Campestre","Sífilis",2,"2017-05-11 13:06:35"),(71,"M","Marvin","Santa Paulina","Chikungunya",2,"2017-06-01 10:19:04"),(33,"M","Ursula","Esplanada","Sífilis",6,"2017-04-01 09:47:04");
+INSERT INTO `cad` (`idade`,`sexo`,`nome`,`bairro`,`doenca`,`mes`,`data`) VALUES (64,"M","Wade","Paraíso","Chikungunya",9,"2017-05-10 14:10:47"),(39,"M","Philip","Desbravador","Sífilis",3,"2017-05-07 21:39:32"),(65,"F","Bertha","Jardins","Sífilis",2,"2017-10-11 06:04:21"),(60,"F","Kirsten","Vila Real","Chikungunya",9,"2017-10-20 02:03:02"),(56,"M","Alea","Parque das Palmeiras","Chikungunya",2,"2017-07-26 18:06:28"),(36,"M","Dominique","Santa Paulina","Sífilis",10,"2017-04-15 16:38:54"),(63,"M","Branden","Santa Maria","Zika",11,"2017-04-08 12:58:41"),(65,"F","Kaitlin","Monte Belo","Chikungunya",7,"2017-02-22 07:57:18"),(68,"F","Orlando","Progresso","Zika",7,"2017-08-25 00:35:56"),(70,"F","Desirae","Jardins","Zika",1,"2017-09-08 13:22:41");
+INSERT INTO `cad` (`idade`,`sexo`,`nome`,`bairro`,`doenca`,`mes`,`data`) VALUES (18,"F","Nicholas","Alvorada","Sífilis",9,"2017-10-10 17:03:59"),(37,"F","Cherokee","Bom Pastor","Dengue",5,"2017-07-28 06:06:26"),(63,"F","Beverly","Vila Real","Dengue",8,"2017-12-11 15:23:35"),(57,"F","Palmer","Autódromo","Chikungunya",1,"2017-11-25 22:51:46"),(49,"F","Silas","Jardim Itália","Dengue",4,"2017-02-20 15:05:27"),(67,"F","Lisandra","Vila Rica","Zika",3,"2017-01-12 13:36:40"),(60,"M","Quintessa","Santo Antônio","Sífilis",7,"2017-05-29 12:26:19"),(55,"M","Winter","Palmital","Dengue",4,"2017-02-08 22:47:22"),(66,"M","Natalie","Jardim América","Chikungunya",8,"2017-07-29 17:21:18"),(71,"F","Clinton","Maria Goretti","Dengue",1,"2017-10-12 19:31:13");
+INSERT INTO `cad` (`idade`,`sexo`,`nome`,`bairro`,`doenca`,`mes`,`data`) VALUES (23,"M","Theodore","Seminário","Chikungunya",9,"2017-01-02 01:45:36"),(29,"M","Aquila","Efapi","Dengue",7,"2017-04-04 16:24:07"),(71,"M","Aphrodite","Universitário","Chikungunya",10,"2017-10-31 17:47:13"),(31,"F","Kasper","São Pedro","Zika",9,"2017-01-10 22:01:07"),(23,"F","Marvin","Trevo","Chikungunya",4,"2017-01-23 19:27:33"),(31,"M","Oren","Dom Pascoal","Sífilis",4,"2017-08-09 00:03:54"),(67,"F","Mannix","Pinheirinho","Sífilis",4,"2017-10-17 18:24:29"),(40,"M","Jacob","Passo dos Fortes","Chikungunya",12,"2017-11-30 14:24:27"),(26,"F","Thomas","Araras","Chikungunya",11,"2017-02-13 17:53:06"),(37,"F","Venus","Bom Pastor","Sífilis",12,"2017-06-03 17:46:59");
+INSERT INTO `cad` (`idade`,`sexo`,`nome`,`bairro`,`doenca`,`mes`,`data`) VALUES (25,"M","Tamara","Jardim América","Dengue",6,"2017-10-08 15:59:01"),(52,"M","Wynter","Progresso","Dengue",7,"2017-02-04 18:22:50"),(59,"F","Brendan","Palmital","Sífilis",7,"2017-04-16 18:24:16"),(54,"F","Callie","Presidente Médici","Sífilis",2,"2017-07-29 09:31:25"),(19,"F","Irene","Vila Real","Zika",11,"2017-09-13 10:30:00"),(44,"F","Whitney","Eldorado","Zika",7,"2017-12-04 17:04:55"),(54,"M","Leroy","Industrial","Dengue",7,"2017-11-24 18:38:42"),(30,"M","Grant","Quedas do Palmital","Dengue",9,"2017-01-23 06:17:09"),(53,"F","Maggy","SAIC","Dengue",9,"2017-08-31 02:47:10"),(30,"F","Sierra","Araras","Dengue",4,"2017-03-31 17:12:30");
+INSERT INTO `cad` (`idade`,`sexo`,`nome`,`bairro`,`doenca`,`mes`,`data`) VALUES (67,"F","Alfreda","Palmital","Dengue",9,"2017-04-29 20:02:17"),(55,"M","Aaron","Paraíso","Dengue",5,"2017-01-10 15:30:39"),(38,"F","Yardley","Pinheirinho","Zika",12,"2017-08-06 05:36:41"),(77,"F","Keane","Esplanada","Chikungunya",3,"2017-08-15 23:15:29"),(55,"M","Yuli","Universitário","Sífilis",8,"2017-02-05 10:17:54"),(38,"F","Camilla","Boa Vista","Dengue",12,"2017-09-25 18:35:44"),(68,"M","Alfreda","Eldorado","Chikungunya",3,"2017-12-30 12:58:08"),(28,"F","Kelly","Industrial","Sífilis",9,"2017-07-28 07:18:30"),(56,"F","Vielka","Trevo","Dengue",10,"2017-01-11 12:18:18"),(77,"F","Bo","Lajeado","Sífilis",11,"2017-10-11 01:40:17");
+INSERT INTO `cad` (`idade`,`sexo`,`nome`,`bairro`,`doenca`,`mes`,`data`) VALUES (78,"M","Owen","São Lucas","Zika",12,"2017-01-02 07:34:22"),(29,"M","Keely","São Cristóvão","Sífilis",11,"2017-11-15 10:44:55"),(26,"F","Haviva","Monte Belo","Sífilis",12,"2017-01-28 18:32:51"),(37,"M","Zelda","Bom Pastor","Chikungunya",5,"2017-05-31 06:45:44"),(69,"F","Tobias","Eldorado","Dengue",9,"2017-10-25 04:21:32"),(75,"M","Keith","Engenho Braun","Zika",2,"2017-08-16 02:10:49"),(62,"M","Valentine","Centro","Dengue",9,"2017-01-19 10:18:03"),(43,"M","Armando","Alvorada","Zika",12,"2017-12-11 21:05:45"),(67,"M","Blair","Jardim Europa","Dengue",12,"2017-08-27 19:41:02"),(57,"F","Alana","SAIC","Zika",11,"2017-06-20 07:45:19");
+INSERT INTO `cad` (`idade`,`sexo`,`nome`,`bairro`,`doenca`,`mes`,`data`) VALUES (15,"F","Mufutau","Paraíso","Chikungunya",2,"2017-08-07 23:26:06"),(37,"M","Hamish","Araras","Zika",7,"2017-02-21 05:14:10"),(58,"M","Wyatt","Seminário","Chikungunya",2,"2017-09-11 05:33:56"),(48,"F","Gage","São Pedro","Zika",5,"2017-07-01 10:30:31"),(20,"F","Palmer","Quedas do Palmital","Dengue",11,"2017-01-19 15:30:12"),(25,"M","Fitzgerald","Bom Retiro","Chikungunya",5,"2017-08-14 19:54:35"),(69,"F","Marah","Jardim Itália","Chikungunya",2,"2017-09-10 17:35:50"),(35,"M","Deborah","Trevo","Dengue",2,"2017-10-22 17:09:27"),(70,"F","Malachi","Jardim Europa","Chikungunya",9,"2017-04-05 09:36:09"),(22,"F","Valentine","São Lucas","Sífilis",1,"2017-12-02 04:34:16");
+INSERT INTO `cad` (`idade`,`sexo`,`nome`,`bairro`,`doenca`,`mes`,`data`) VALUES (21,"F","Libby","Industrial","Dengue",8,"2017-07-15 01:19:47"),(28,"M","Raja","Dom Gerônimo","Zika",8,"2017-08-07 20:28:41"),(28,"F","Leslie","Industrial","Dengue",6,"2017-09-29 04:05:44"),(77,"F","Bertha","Jardim Itália","Zika",7,"2017-02-23 03:03:06"),(35,"F","Quemby","Palmital","Chikungunya",5,"2017-08-19 23:59:29"),(30,"M","Eden","Araras","Dengue",3,"2017-01-17 18:03:31"),(70,"M","Seth","Dom Gerônimo","Zika",9,"2017-06-20 22:40:29"),(73,"M","Kimberly","Belvedere","Sífilis",1,"2017-10-28 02:19:20"),(32,"F","Cameron","Jardim Europa","Dengue",10,"2017-07-16 03:41:03"),(69,"M","August","Santos Dummond","Sífilis",10,"2017-03-30 20:44:30");
