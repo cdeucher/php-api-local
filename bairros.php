@@ -3,11 +3,12 @@
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
-$dbhost = '172.17.0.4';
+$dbhost = '172.17.0.5';
 $dbport = 3306;
 $dbuser = "root";
 $dbpwd  = "123";
 */
+
 $dbhost = $OPENSHIFT_MYSQL_DB_HOST;
 $dbport = $OPENSHIFT_MYSQL_DB_PORT;
 $dbuser = "adminmtGQWWG";
@@ -36,7 +37,7 @@ if(!empty($_GET['param3']) && !empty($_GET['valor3']))
 $query = "select c.doenca,count(1)as casos,YEAR(c.`data`) as ano
 ,COUNT(c.bairro = 'Alvorada' OR NULL) AS 'Alvorada'
 ,COUNT(c.bairro = 'Araras' OR NULL) AS 'Araras'
-,COUNT(c.bairro = 'Autódromo' OR NULL) AS 'Autódromo'
+,COUNT(c.bairro = 'Autodromo' OR NULL) AS 'Autódromo'
 ,COUNT(c.bairro = 'Bela Vista' OR NULL) AS 'Bela Vista'
 ,COUNT(c.bairro = 'Belvedere' OR NULL) AS 'Belvedere'
 ,COUNT(c.bairro = 'Boa Vista' OR NULL) AS 'Boa Vista'
@@ -46,7 +47,7 @@ $query = "select c.doenca,count(1)as casos,YEAR(c.`data`) as ano
 ,COUNT(c.bairro = 'Centro' OR NULL) AS 'Centro'
 ,COUNT(c.bairro = 'Cristo Rei' OR NULL) AS 'Cristo Rei'
 ,COUNT(c.bairro = 'Desbravador' OR NULL) AS 'Desbravador'
-,COUNT(c.bairro = 'Dom Gerônimo' OR NULL) AS 'Dom Gerônimo'
+,COUNT(c.bairro = 'Dom Geronimo' OR NULL) AS 'Dom Gerônimo'
 ,COUNT(c.bairro = 'Dom Pascoal' OR NULL) AS 'Dom Pascoal'
 ,COUNT(c.bairro = 'Efapi' OR NULL) AS 'Efapi'
 ,COUNT(c.bairro = 'Eldorado' OR NULL) AS 'Eldorado'
@@ -54,38 +55,39 @@ $query = "select c.doenca,count(1)as casos,YEAR(c.`data`) as ano
 ,COUNT(c.bairro = 'Esplanada' OR NULL) AS 'Esplanada'
 ,COUNT(c.bairro = 'Fronteira Sul' OR NULL) AS 'Fronteira Sul'
 ,COUNT(c.bairro = 'Industrial' OR NULL) AS 'Industrial'
-,COUNT(c.bairro = 'Jardim América' OR NULL) AS 'Jardim América'
+,COUNT(c.bairro = 'Jardim America' OR NULL) AS 'Jardim América'
 ,COUNT(c.bairro = 'Jardim Europa' OR NULL) AS 'Jardim Europa'
-,COUNT(c.bairro = 'Jardim Itália' OR NULL) AS 'Jardim Itália'
+,COUNT(c.bairro = 'Jardim Italia' OR NULL) AS 'Jardim Itália'
 ,COUNT(c.bairro = 'Jardins' OR NULL) AS 'Jardins'
 ,COUNT(c.bairro = 'Lajeado' OR NULL) AS 'Lajeado'
-,COUNT(c.bairro = 'Líder' OR NULL) AS 'Líder'
+,COUNT(c.bairro = 'Lider' OR NULL) AS 'Líder'
 ,COUNT(c.bairro = 'Maria Goretti' OR NULL) AS 'Maria Goretti'
 ,COUNT(c.bairro = 'Monte Belo' OR NULL) AS 'Monte Belo'
 ,COUNT(c.bairro = 'Palmital' OR NULL) AS 'Palmital'
-,COUNT(c.bairro = 'Paraíso' OR NULL) AS 'Paraiso'
+,COUNT(c.bairro = 'Paraiso' OR NULL) AS 'Paraiso'
 ,COUNT(c.bairro = 'Parque das Palmeiras' OR NULL) AS 'Parque das Palmeiras'
 ,COUNT(c.bairro = 'Passo dos Fortes' OR NULL) AS 'Passo dos Fortes'
 ,COUNT(c.bairro = 'Pinheirinho' OR NULL) AS 'Pinheirinho'
-,COUNT(c.bairro = 'Presidente Médici' OR NULL) AS 'Presidente Médici'
+,COUNT(c.bairro = 'Presidente Medici' OR NULL) AS 'Presidente Médici'
 ,COUNT(c.bairro = 'Progresso' OR NULL) AS 'Progresso'
 ,COUNT(c.bairro = 'Quedas do Palmital' OR NULL) AS 'Quedas do Palmital'
 ,COUNT(c.bairro = 'SAIC' OR NULL) AS 'SAIC'
 ,COUNT(c.bairro = 'Santa Maria' OR NULL) AS 'Santa Maria'
 ,COUNT(c.bairro = 'Santa Paulina' OR NULL) AS 'Santa Paulina'
-,COUNT(c.bairro = 'Santo Antônio' OR NULL) AS 'Santo Antônio'
+,COUNT(c.bairro = 'Santo Antonio' OR NULL) AS 'Santo Antônio'
 ,COUNT(c.bairro = 'Santos Dummond' OR NULL) AS 'Santos Dummond'
-,COUNT(c.bairro = 'São Cristóvão' OR NULL) AS 'São Cristóvão'
-,COUNT(c.bairro = 'São Lucas' OR NULL) AS 'São Lucas'
-,COUNT(c.bairro = 'São Pedro' OR NULL) AS 'São Pedro'
-,COUNT(c.bairro = 'Seminário' OR NULL) AS 'Seminário'
+,COUNT(c.bairro = 'Sao Cristovao' OR NULL) AS 'São Cristóvão'
+,COUNT(c.bairro = 'Sao Lucas' OR NULL) AS 'São Lucas'
+,COUNT(c.bairro = 'Sao Pedro' OR NULL) AS 'São Pedro'
+,COUNT(c.bairro = 'Seminario' OR NULL) AS 'Seminário'
 ,COUNT(c.bairro = 'Trevo' OR NULL) AS 'Trevo'
-,COUNT(c.bairro = 'Universitário' OR NULL) AS 'Universitário'
+,COUNT(c.bairro = 'Universitario' OR NULL) AS 'Universitário'
 ,COUNT(c.bairro = 'Vila Real' OR NULL) AS 'Vila Real'
 ,COUNT(c.bairro = 'Vila Rica' OR NULL) AS 'Vila Rica'
  from cad c   $where
 group by c.doenca,YEAR(c.`data`) ";
 //echo $query;die;
+//$query =  "select * from cad c where c.bairro = 'Paraiso'";
 $rs = mysql_query($query);
 
 $return = array();
