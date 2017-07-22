@@ -1,5 +1,5 @@
 ﻿<?php
-include('bd.php');
+require('bd.php');
 
 $dbname = "php";
 $connection = mysql_connect($dbhost.":".$dbport, $dbuser, $dbpwd);
