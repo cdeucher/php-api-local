@@ -23,7 +23,7 @@ $field = (!empty($_GET['param4'])) ? $_GET['param4'] : 'doenca';
 //echo $where;die;
 $query = "select c.$field as doenca,count(1)as casos,YEAR(c.`data`) as ano
  from cad c   $where
-group by c.$field,YEAR(c.`data`) order by count(1) asc";
+group by c.$field,YEAR(c.`data`) order by count(1) desc";
 //echo $query;die;
 //$query =  "select * from cad c where c.bairro = 'Paraiso'";
 $rs = mysql_query($query);
