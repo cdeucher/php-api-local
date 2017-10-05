@@ -1,5 +1,7 @@
 <?php
-header('Access-Control-Allow-Origin: *'); 
+//header('Access-Control-Allow-Origin: *'); 
+  header('Access-Control-Allow-Origin: http://www.eadfranciscanos.com.br', false);
+
 //echo "<pre>";
 //print_r($_REQUEST); die;
 
