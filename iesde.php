@@ -33,4 +33,5 @@ if(!isset($_REQUEST['server'])){
 }else
   echo  set_body($_REQUEST['server'],$_REQUEST['data']);
 die;
+
 ?>
