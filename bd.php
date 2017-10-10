@@ -14,5 +14,5 @@ $dbhost = 'localhost';
 $dbport = 3306;
 $dbuser = "root";
 $dbpwd  = "Xblaum#3";
-
+$database = 'graph';
 ?>
