@@ -10,9 +10,9 @@ $dbuser = "root";
 $dbpwd  = "123";
 */
 
-$dbhost = $OPENSHIFT_MYSQL_DB_HOST;
-$dbport = $OPENSHIFT_MYSQL_DB_PORT;
-$dbuser = "adminmtGQWWG";
-$dbpwd  = "AAWHI28BByHP";
+$dbhost = 'localhost';
+$dbport = 3306;
+$dbuser = "root";
+$dbpwd  = "Xblaum#3";
 
 ?>

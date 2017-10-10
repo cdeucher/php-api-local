@@ -1,4 +1,6 @@
 ﻿<?php
+header('Access-Control-Allow-Origin: *');
+
 require('bd.php');
 
 $dbname = "php";
