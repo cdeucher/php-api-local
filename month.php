@@ -23,7 +23,7 @@ $query = "select a.mes,a.ano , group_concat(a.doenca separator ',') as doenca,gr
 (select c.doenca,count(1)as casos,c.mes ,YEAR(c.`data`) as ano
  from cad c  
  group by c.doenca,c.mes  order by c.mes,c.doenca desc limit 100) a
-group by a.mes  order by a.mes,a.doenca desc";
+group by a.mes  order by CAST(a.mes AS DECIMAL),a.doenca desc  ";
 //echo $query;die;
 //$query =  "select * from cad c where c.bairro = 'Paraiso'";
 $rs = mysql_query($query);
