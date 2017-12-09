@@ -19,9 +19,11 @@ if(!empty($_GET['param3']) && !empty($_GET['valor3']))
 $field = (!empty($_GET['param4'])) ? $_GET['param4'] : 'doenca';
 $limit = (!empty($_GET['limit'])) ? $_GET['limit'] : '3';
 //echo $where;die;
-$query = "select c.$field as doenca,c.mes,count(1)as casos,YEAR(c.`data`) as ano
- from cad c   $where
- group by c.$field,c.mes,YEAR(c.`data`)  order by count(1) desc limit $limit";
+$query = "select a.mes,a.ano , group_concat(a.doenca separator ',') as doenca,group_concat(a.casos separator ',') as casos from 
+(select c.doenca,count(1)as casos,c.mes ,YEAR(c.`data`) as ano
+ from cad c  
+ group by c.doenca,c.mes  order by c.mes,c.doenca desc limit 100) a
+group by a.mes  order by a.mes,a.doenca desc";
 //echo $query;die;
 //$query =  "select * from cad c where c.bairro = 'Paraiso'";
 $rs = mysql_query($query);
